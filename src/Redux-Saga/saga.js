@@ -1,14 +1,14 @@
 import { actions } from './action';
 import { all, takeEvery, put, call, delay } from 'redux-saga/effects';
 import axios from 'axios';
-import { FORM_FIELDS, FORM_FILEDS_VALUE, URL } from '../configs';
+import { URL } from '../configs';
 
 const getFormFieldsFunc = async (data) => {
   try {
-    // const response = await axios.get(`${URL}/form?${data.formId}`);
+    const response = await axios.get(`${URL}/form?${data.formId}`);
 
-    // return response.data;
-    return FORM_FIELDS;
+    return response.data;
+
   } catch (e) {
     throw {
       message: e.message,
@@ -39,11 +39,10 @@ export function* getFormFields(payload) {
 
 const getFormFieldsInitialValuesFunc = async (data) => {
   try {
-    // const response = await axios.get(`${URL}/data?${data.formId}`);
+    const response = await axios.get(`${URL}/data?${data.formId}`);
 
-    // return response.data;
+    return response.data;
 
-    return FORM_FILEDS_VALUE;
   } catch (e) {
     throw {
       message: e.message,

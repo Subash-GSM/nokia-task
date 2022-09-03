@@ -32,7 +32,7 @@ const INITIAL_STATE: InitialState = {
 };
 
 export const FormReducer = (state = INITIAL_STATE, action: Action) => {
-  console.log(action.data);
+
   switch (action.type) {
     case actions.GET_FORM_FIELDS:
       return {
